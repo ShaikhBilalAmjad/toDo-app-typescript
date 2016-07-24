@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="./bootstrap/css/style.css">
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="./bootstrap/js/jquery.js"></script>-->
+		<script src="./bootstrap/js/bootstrap.js"></script>	
+		<script src="./app.js"></script>
+	</head>
+ 	<body>
+		 <section class="container">
+		   <nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">ToDO | TypeScript</a>
+				</div>
+				
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				
+				<form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+					<input type="text" id="searchEngine" class="form-control" onkeyup="toDo.searchItems(event)" onblur="toDo.dummy()" placeholder="Search">
+					<i class=" glyphicon glyphicon-trash navbar-right list-remove-glyph" onclick="toDo.removeItem(event)" ></i>
+					<i class=" glyphicon glyphicon-pencil navbar-right list-edit-glyph" onclick="toDo.editItem(event)"></i>
+					<i class=" glyphicon glyphicon-plus-sign navbar-right list-add-glyph" onclick="toDo.addItem(event)"></i>
+					</div>
+				</form>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+			</nav>
+			<div id="update-task" class="edit-task" hidden>
+				<h3 class="text-primary">Edit Task</h3>
+				<form id="update-task-form" class="form-inline well">
+				<input type="text" id="update-task-input" value="" placeholder="Update selected task" class="form-control" style="width: 80%;"/> 
+				<button class="btn btn-primary pull-right" onclick="toDo.updateTaskEdit()">Update</button>
+					
+				</form>
+				
+			</div>
+			<div id="add-task" class="new-task" hidden>
+				<h3 class="text-primary">Add Task</h3>
+				<form id="add-task-form" class="form-inline well">
+				<input type="text" value="" id="add-input-field" placeholder="Add New task" class="form-control"  style="width: 80%;"/> 
+				<button class="btn btn-primary pull-right" onclick="toDo.addNewTask()">Add</button>
+					
+				</form>
+				
+			</div>
+			<section class="List-Item">
+				<div class="list-group" id="todoListItems">
+					<a href="#" class="list-group-item task" id="task1" onclick="toDo.changeClass(event)">
+					Cras justo odio
+					</a>
+				
+						<a href="#" class="list-group-item task" id="task2" onclick="toDo.changeClass(event)">
+							Dapibus ac facilisis in 
+						</a>
+				
+						<a href="#" class="list-group-item task" id="task3" onclick="toDo.changeClass(event) ">
+						Dapibus ac facilisis in
+						</a>
+				
+						<a href="#" class="list-group-item task" id="task4" onclick="toDo.changeClass(event)">
+							Dapibus ac facilisis in
+							</a>
+					
+				</div>
+				
+			</section>
+		 </section>
+	 </body>
+</html>  
